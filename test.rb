@@ -1,8 +1,5 @@
 
-
-
-
-Tag = Struct.new(:type, :classes, :id, :name)
+Tag = Struct.new(:type, :classes, :id, :name, :parent, :children)
 
 def parse_tag(string)
   tag = Tag.new
@@ -22,6 +19,6 @@ def parse_tag(string)
   tag
 end
 
-
 string = "<p class='foo bar' id='baz' name='fozzie'>"
 t = parse_tag(string)
+
