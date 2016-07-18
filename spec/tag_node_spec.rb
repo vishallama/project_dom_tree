@@ -40,6 +40,21 @@ describe TagNode do
       end
     end
 
+    describe '#open?' do
+      let(:p_tag) { TagNode.new(:p) }
+
+      it 'returns true if the tag is open' do
+        expect(p_tag.open?).to be true
+      end
+    end
+
+    describe '#closed?' do
+      let(:p_closed_tag) { TagNode.new(:"/p") }
+
+      it 'returns true if the tag is closed' do
+        expect(p_closed_tag.closed?).to be true
+      end
+    end
   end
 
 end
